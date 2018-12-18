@@ -28,16 +28,16 @@ ACLOCAL_AMFLAGS = -I m4
 # Primaries
 # ---------
 
-bin_PROGRAMS           = simpleScanner
+bin_PROGRAMS                   = simpleLexicalAnalyser
 
-simpleScanner_SOURCES  = ./src/SimpleScanner.ll
+simpleLexicalAnalyser_SOURCES  = ./src/SimpleScanner.ll
 
-simpleScanner_INCLUDES = -I${srcdir}/include
+simpleLexicalAnalyser_INCLUDES = -I${srcdir}/include
 
-simpleScanner_CPPFLAGS = -DHAVE_CONFIG_H \
-						 ${simulab_INCLUDES}
+simpleLexicalAnalyser_CPPFLAGS = -DHAVE_CONFIG_H \
+                                 ${simpleLexicalAnalyser_INCLUDES}
 
-simpleScanner_LDFLAGS  = -lfl
+simpleLexicalAnalyser_LDFLAGS  = -lfl
 
 
 # Executable target : help
@@ -51,10 +51,7 @@ help :
 	@echo "                                                                                "
 	@echo "  1) Build based targets                                                        "
 	@echo "                                                                                "
-	@echo "    - simulab-devel | s                                                         "
-	@echo "    - doxygen | dox (defaults to doxygen-devel)                                 "
-	@echo "    - doxygen-devel                                                             "
-	@echo "    - doxygen-release                                                           "
+	@echo "    - simpleLexicalAnalyser                                                     "
 	@echo "                                                                                "
 	@echo "  2) Ancilliary targets                                                         "
 	@echo "                                                                                "
