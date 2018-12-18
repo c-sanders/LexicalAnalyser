@@ -5,8 +5,8 @@ Filename : README
 1) Introduction
 ---------------
 
-The files in this package implement a very basic Lexical Analyser (aka Scanner or Tokeniser). The
-bulk of the Lexical Analyser is realised using the GNU Flex program, whilst the rest of it is
+The files in this package implement a very basic Lexical Analyser (aka Lexer, Scanner or Tokeniser).
+The bulk of the Lexical Analyser is realised using the GNU Flex program, whilst the rest of it is
 implemented using the C++ programming language.
 
 Don't let this last point confuse you! It doesn't mean that the Lexical Analyser can only be used to

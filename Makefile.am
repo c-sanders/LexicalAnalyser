@@ -28,7 +28,11 @@ ACLOCAL_AMFLAGS = -I m4
 # Primaries
 # ---------
 
-bin_PROGRAMS                   = simpleLexicalAnalyser
+bin_PROGRAMS                   = simpleLexicalAnalyser \
+                                 simpleParser
+
+
+# - simpleLexicalAnalyser
 
 simpleLexicalAnalyser_SOURCES  = ./src/SimpleScanner.ll
 
@@ -38,6 +42,18 @@ simpleLexicalAnalyser_CPPFLAGS = -DHAVE_CONFIG_H \
                                  ${simpleLexicalAnalyser_INCLUDES}
 
 simpleLexicalAnalyser_LDFLAGS  = -lfl
+
+
+# - simpleParser
+
+simpleParser_SOURCES           = ./src/SimpleParser.cpp
+
+simpleParser_INCLUDES          = -I${srcdir}/include
+
+simpleParser_CPPFLAGS          = -DHAVE_CONFIG_H \
+                                 ${simpleParser_INCLUDES}
+
+simpleParser_LDFLAGS           = -lfl
 
 
 # Executable target : help
