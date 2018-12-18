@@ -1,0 +1,12 @@
+Filename : README.setup_autotools_project
+*****************************************
+
+This file, along with a number of the files with which it is distributed, are intended to be used
+to create a GNU Autotools project. This file will explain how to do this.
+
+To begin with, cd to the directory which contains this file. From within this directory, execute the
+following commands ;
+
+  > autoreconf
+  > automake --add-missing  (if necessary)
+  > libtoolize              (if necessary)
