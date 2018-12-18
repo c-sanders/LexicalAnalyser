@@ -6,21 +6,22 @@
 # ------------------------------------------------------------------------------
 
 
+# AC_INIT(
+#		[Simple Scanner generated using GNU Flex],
+#		[0.0.1],
+#		[support@gravitas.com],
+#		[SimpleScanner],
+#		[http://www.gravitas-toolworks.com])
+
 AC_INIT(
-		[Simple Scanner generated using GNU Flex],
-		[0.0.1],
-		[support@gravitas.com],
-		[SimpleScanner],
-		[http://www.gravitas-toolworks.com])
+        [SimpleScanner],
+		[0.0.1])
+
+AC_CONFIG_SRCDIR([src/SimpleScanner.ll])
 
 AC_CONFIG_AUX_DIR(config)
 
-AM_INIT_AUTOMAKE(
-				 [SimpleScanner],
-				 [0.0.1])
-
-AC_CONFIG_SRCDIR(
-				 [src/SimpleScanner.cpp])
+AM_INIT_AUTOMAKE([subdir-objects])
 
 AC_CONFIG_MACRO_DIR([m4])
 
