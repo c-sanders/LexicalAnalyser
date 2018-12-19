@@ -1,7 +1,7 @@
-# Makefile.am for package : perceptron
+# Makefile.am for package : simpleLexicalAnalyser
 # ==============================================================================
 #
-# Automake provides 3 '-I' options automatically and they are ;
+# GNU Automake automatically provides three '-I' options, and they are ;
 #
 #   -I.
 #   -I${srcdir}
