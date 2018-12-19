@@ -21,8 +21,8 @@ This package is designed to be processed by the GNU Autotools suite of tools, an
 this file will explain how to do just that. Processing the package in the manner described below,
 will cause it to become a GNU Autotools project.
 
-To begin the process of turning this package into a GNU Autotools package, cd to the directory
-which contains this file, and then execute the following two commands ;
+To begin the process of turning this package into a GNU Autotools project, cd to the directory
+which contains this file, and then execute the following two commands from within it ;
 
   > libtoolize
   > autoreconf
@@ -33,7 +33,7 @@ rectified by executing the command ;
 
   automake --add-missing
 
-Execute this command, and if it is successful, then execute thr autoreconf command one more time.
+Execute this command, and if it is successful, then execute the autoreconf command one more time.
 
 If all of these commands executed successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called configure should have been created
