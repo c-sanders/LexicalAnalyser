@@ -18,8 +18,8 @@ Lexical Analyser was implemented using the C and C++ programming languages.
 ------------------------------
 
 This package is designed to be processed by the GNU Autotools suite of tools, and the remainder of
-this file will explain how to do just that. Processing the package in this way will cause it to
-become a GNU Autotools project.
+this file will explain how to do just that. Processing the package in the manner described below,
+will cause it to become a GNU Autotools project.
 
 To begin the process of turning this package into a GNU Autotools package, cd to the directory
 which contains this file, and then execute the following two commands ;
