@@ -5,21 +5,21 @@ Filename : README
 1) Introduction
 ---------------
 
-The files in this package implement a very basic Lexical Analyser (aka Lexer, Scanner or Tokeniser).
-The bulk of the Lexical Analyser is realised using the GNU Flex program, whilst the rest of it is
-implemented using the C++ programming language.
+This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
+Lexical Analyser is implemented in the C programming language by the GNU Flex program, whilst the
+rest of it is implemented using the C++ programming language.
 
-Don't let this last point confuse you! It doesn't mean that the Lexical Analyser can only be used to
-recognise C++. It means only what it says - and that is that part of the Lexical Analyser was
-implemented using C++.
+Don't let the above description confuse you! It doesn't mean that the Lexical Analyser can only be
+used to recognise C and/or C++ source code. It means only what it says - and that is that the
+Lexical Analyser was implemented using the C and C++ programming languages.
 
 
 2) How to process this package
 ------------------------------
 
-This package is intended to be processed by the GNU Autotools suite of tools, and doing so will
-result in the package becoming a GNU Autotools project. This file will explain how to process this
-package with the GNU Autotools suite of tools.
+This package is designed to be processed by the GNU Autotools suite of tools, and doing so will
+result in the package becoming a GNU Autotools project. The remainder of this file will explain how
+to process this package with the GNU Autotools suite of tools.
 
 To begin, cd to the directory which contains this file, and then execute the following two
 commands ;
@@ -28,13 +28,14 @@ commands ;
   > autoreconf
 
 The autoreconf command may complain that a number of required files cannot be found. However,
-don't worry, because it also informs us that this can be rectified by executing the command ;
+don't worry about this, because the autoreconf command also informs us that this problem can be
+rectified by executing the command ;
 
   automake --add-missing
 
-Therefore, you should go ahead and execute this command.
+Execute this command, and if it is successful, then execute thr autoreconf command one more time.
 
-If all of these commands executed successfully, then the files should now be setup as a GNU
+If all of these commands executed successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called configure should have been created
 in the same directory as this file.
 
@@ -42,6 +43,5 @@ in the same directory as this file.
 3) What to do next
 ------------------
 
-You should now read the INSTALL file for instructions on how to use this configure script. It will
-explain how to configure, build, and then install the Lexical Analyser and any of its associated
-files.
+Read the INSTALL file for instructions on how to use this configure script. It will explain how to
+configure, build, and then install the Lexical Analyser and any of its associated files.
