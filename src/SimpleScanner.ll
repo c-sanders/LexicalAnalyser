@@ -1,17 +1,19 @@
 /*
- * The flex utility should be used to process this file.
+ * The GNU Flex program should be used to process this file.
  *
- * It can be instructed to process this file, with a command which is similar to the following ;
+ * It can be instructed to process this file with a command which is similar to the following ;
  *
  *   > flex ./myScanner.ll
  *
- * If it successfully processes this file, then flex should generate the following output file ;
+ * If it successfully processes this file, then Flex should generate the following output file ;
  *
  *   - lex.yy.c
  */
 
 
 %{
+// %option noyywrap
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -23,11 +25,9 @@ using std::cout;
 using std::endl;
 
 
-// #include "myGrammar.tab.h"
-// Includes Token type definitions
-
 #define STANDALONE_SCANNER  1
 
+#ifdef STANDALONE_SCANNER
 #define UUID                100
 #define COMMAND_ECHO_UUID   101
 #define COMMAND_CONNECT     102
@@ -37,12 +37,17 @@ using std::endl;
 #define COMMAND_HELP        106
 #define LPAREN              107
 #define RPAREN              108
-
-
-#ifndef STANDALONE_SCANNER
-#define RETURN_VALUE(returnCode) ({return(returnCode);})
-#else
 #define RETURN_VALUE(returnCode)
+#else
+#include "myGrammar.tab.h"
+// Includes Token type definitions
+#endif
+
+
+#ifdef STANDALONE_SCANNER
+
+#else
+#define RETURN_VALUE(returnCode) ({return(returnCode);})
 #endif
 %}
 
@@ -55,10 +60,10 @@ using std::endl;
 
     cout << endl;
     cout << "Scanner/Tokenizer has encountered a UUID" << endl;
-    cout << "Length of UUID in chars   = "             << strlen(yytext) << endl;
-    cout << "Address in memory of UUID = "             << & yytext       << endl;
-    cout << "Value of UUID code        = "             << UUID           << endl;
-    cout << "UUID encountered          : "             << yytext         << endl;
+	cout << "Length of UUID in chars                = "             << strlen(yytext) << endl;
+	cout << "Address in memory of UUID              = "             << & yytext       << endl;
+	cout << "Value of UUID Token type               = "             << UUID           << endl;
+	cout << "UUID encountered                       : "             << yytext         << endl;
     cout << endl;
 
     RETURN_VALUE(UUID);
@@ -67,9 +72,9 @@ using std::endl;
 
     cout << endl;
     cout << "Scanner/Tokenizer has encountered the token : echoUUID" << endl;
-    cout << "Length of token in chars        = " << strlen(yytext) << endl;
-    cout << "Address in memory of token      = " << & yytext << endl;
-    cout << "Value of COMMAND_ECHO_UUID code = " << COMMAND_ECHO_UUID << endl;
+	cout << "Length of token in chars               = " << strlen(yytext) << endl;
+	cout << "Address in memory of token             = " << & yytext << endl;
+	cout << "Value of COMMAND_ECHO_UUID Token type  = " << COMMAND_ECHO_UUID << endl;
     cout << endl;
 
     RETURN_VALUE(COMMAND_ECHO_UUID);
@@ -78,9 +83,9 @@ using std::endl;
 
     cout << endl;
     cout << "Scanner/Tokenizer has encountered the token : connect" << endl;
-    cout << "Length of token in chars      = " << strlen(yytext) << endl;
-    cout << "Address in memory of token    = " << & yytext << endl;
-    cout << "Value of COMMAND_CONNECT code = " << COMMAND_CONNECT << endl;
+	cout << "Length of token in chars               = " << strlen(yytext) << endl;
+	cout << "Address in memory of token             = " << & yytext << endl;
+	cout << "Value of COMMAND_CONNECT Token type    = " << COMMAND_CONNECT << endl;
     cout << endl;
 
     RETURN_VALUE(COMMAND_CONNECT);
@@ -89,9 +94,9 @@ using std::endl;
 
     cout << endl;
     cout << "Scanner/Tokenizer has encountered the token : disconnect" << endl;
-    cout << "Length of token in chars         = " << strlen(yytext) << endl;
-    cout << "Address in memory of token       = " << & yytext << endl;
-    cout << "Value of COMMAND_DISCONNECT code = " << COMMAND_DISCONNECT << endl;
+	cout << "Length of token in chars               = " << strlen(yytext) << endl;
+	cout << "Address in memory of token             = " << & yytext << endl;
+	cout << "Value of COMMAND_DISCONNECT Token type = " << COMMAND_DISCONNECT << endl;
     cout << endl;
 
     RETURN_VALUE(COMMAND_DISCONNECT);
@@ -113,17 +118,32 @@ using std::endl;
 
 %%
 
+// The function yywrap will be called by the Lexer when input is exhausted.
+//
+// Return 0 if more processing is required or 1 otherwise.
+
+int
+yyFlexLexer::yywrap
+(
+)
+{
+	return(1);
+}
+
+
 int
 main
 (
  void
 )
 {
-    int   valueReturn = 1;
+	int           valueReturn = 1;
 
-    int   num_lines,
-          num_chars,
-          countWords;
+	int           num_lines,
+	              num_chars,
+	              countWords;
+
+	yyFlexLexer * lexer_p = new yyFlexLexer();
 
 
     // Prevent the Compiler from complaining that the following variables are unused.
@@ -139,7 +159,7 @@ main
         char   buffer[10];
 
 
-        yyunput(0, buffer);
+		// yyunput(0, buffer);
     }
 
     cout << endl;
@@ -167,7 +187,7 @@ main
             cout << endl;
         }
 
-        valueReturn = yylex();
+		valueReturn = lexer_p->yylex();
     }
 
     printf("\n");
