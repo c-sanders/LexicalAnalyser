@@ -1,4 +1,4 @@
-# Makefile.am for package : simpleLexicalAnalyser
+# Makefile.am for package : LexicalAnalyser
 # ==============================================================================
 #
 # GNU Automake automatically provides three '-I' options, and they are ;
