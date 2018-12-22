@@ -48,6 +48,9 @@ simpleParser_CPPFLAGS          = -DHAVE_CONFIG_H \
 simpleParser_LDFLAGS           = -lfl
 
 
+all : simpleLexicalAnalyser
+
+
 SimpleScanner.cpp : SimpleScanner.ll
 
     # ${LEX} --verbose --c++ --outfile=${@} ./src/SimpleScanner.ll
