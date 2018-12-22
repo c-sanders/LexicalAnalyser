@@ -41,4 +41,5 @@ LT_INIT([preserve-dup-deps])
 
 AC_OUTPUT([
            Makefile
+		   ./src/Mkefile
 ])
