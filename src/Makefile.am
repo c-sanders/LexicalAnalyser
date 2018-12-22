@@ -53,7 +53,10 @@ all : simpleLexicalAnalyser
 
 SimpleScanner.cpp : SimpleScanner.ll
 
-    # ${LEX} --verbose --c++ --outfile=${@} ./src/SimpleScanner.ll
+    ${LEX} --verbose --c++ --outfile=${@} SimpleScanner.ll
+
+
+dummy : SimpleScanner.ll
 
     echo "${@}"
 	echo "${<}"
