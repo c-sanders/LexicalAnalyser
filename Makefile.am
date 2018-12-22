@@ -16,44 +16,13 @@
 
 ACLOCAL_AMFLAGS = -I m4
 
-# SUBDIRS         = images \
+SUBDIRS         = src
 # 				  src \
 #                   Toolboxes
 
 # EXTRA_DIST      = ${top_srcdir}/include \
 #                   ./dynamic_symbol_table.txt \
 #                   ./utils
-
-
-# Primaries
-# ---------
-
-bin_PROGRAMS                   = simpleLexicalAnalyser \
-                                 simpleParser
-
-
-# - simpleLexicalAnalyser
-
-simpleLexicalAnalyser_SOURCES  = ./src/SimpleScanner.ll
-
-simpleLexicalAnalyser_INCLUDES = -I${srcdir}/include
-
-simpleLexicalAnalyser_CPPFLAGS = -DHAVE_CONFIG_H \
-                                 ${simpleLexicalAnalyser_INCLUDES}
-
-simpleLexicalAnalyser_LDFLAGS  = -lfl
-
-
-# - simpleParser
-
-simpleParser_SOURCES           = ./src/SimpleParser.cpp
-
-simpleParser_INCLUDES          = -I${srcdir}/include
-
-simpleParser_CPPFLAGS          = -DHAVE_CONFIG_H \
-                                 ${simpleParser_INCLUDES}
-
-simpleParser_LDFLAGS           = -lfl
 
 
 # Executable target : help
@@ -89,6 +58,7 @@ displaySettings :
 	@echo "BASH          = ${SHELL}"
 	@echo "SH            = ${SH}"
 	@echo ""
+	@echo "LEX           = ${LEX}"
 	@echo "YACC          = ${YACC}"
 	@echo ""
 	@echo "top_srcdir    = ${top_srcdir}"
