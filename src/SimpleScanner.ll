@@ -1,18 +1,37 @@
 /*
  * The GNU Flex program should be used to process this file.
  *
- * It can be instructed to process this file with a command which is similar to the following ;
+ * The code in this file implements a Scanner using the C++ programming language. As a consequence,
+ * it should be processed accordingly. The following points should be taken into account when using
+ * one of the GNU Flex tools, i.e. flex or flex++, to process this file.
  *
- *   > flex ./myScanner.ll
+ *   - Use any one of the following commands to process this file;
  *
- * If it successfully processes this file, then Flex should generate the following output file ;
+ *       > flex   --verbose       ./SimpleScanner.ll
+ *       > flex   --verbose --c++ ./SimpleScanner.ll
+ *       > flex++ --verbose       ./SimpleScanner.ll
  *
- *   - lex.yy.c
+ * Note 1) : If the first incarnation of the command is used, then you may also need to specify the
+ *           following option below;
+ *
+ *             %option c++
+ *
+ * Note 2) : The first incarnation of the command can also be used to process this file, if the code
+ *           in this file implements a Scanner using the C programming language.
+ *
+ * Note 3) : The flex++ version of the GNU Flex program should be used
+ *
+ * If it successfully processes this file, then the GNU Flex program should generate one of the
+ * following output file ;
+ *
+ *   - lex.yy.c   # If the Scanner has been implemented in C.
+ *   - lex.yy.cc  # If the Scanner has been implemented in C++.
  */
 
 
 %{
 // %option noyywrap
+// %option c++
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -114,14 +133,10 @@ using std::endl;
                     Recall that flex's default action is to discard any characters which match. */
 [ \t\n]          ;
 .                {printf("The Scanner/Tokenizer has encountered the following character which is either invalid, or does not form part of a keyword : %c\n", yytext[0]);}
-
-
 %%
-
 // The function yywrap will be called by the Lexer when input is exhausted.
 //
 // Return 0 if more processing is required or 1 otherwise.
-
 int
 yyFlexLexer::yywrap
 (
@@ -129,8 +144,6 @@ yyFlexLexer::yywrap
 {
 	return(1);
 }
-
-
 int
 main
 (
@@ -147,21 +160,15 @@ main
 
 
     // Prevent the Compiler from complaining that the following variables are unused.
-
     num_lines  = 0;
     num_chars  = 0;
     countWords = 0;
-
     // Prevent the Compiler from complaining that the following function is unused.
-
     if (false)
     {
         char   buffer[10];
-
-
 		// yyunput(0, buffer);
     }
-
     cout << endl;
     cout << "================================================================================" << endl;
     cout << "This is a very basic Lexical Scanner which has been implemented using GNU Flex. " << endl;
@@ -170,9 +177,15 @@ main
     cout << endl;
     cout << "Press Ctrl + D on a line all by itself to finish passing charecters to the      " << endl;
     cout << "Lexical Scanner and by doing so, causing it to quit.                            " << endl;
+    cout << ""                                                                                 << endl;
+    cout << "List of valid keywords which the Scanner will understand;"                        << endl;
+    cout << ""                                                                                 << endl;
+    cout << "  echoUUID"                                                                       << endl;
+    cout << "  connect"                                                                        << endl;
+    cout << "  disconnect"                                                                     << endl;
+    cout << "  quit"                                                                           << endl;
     cout << "================================================================================" << endl;
     cout << endl;
-
     while
     (
      (valueReturn != 0)            &&
@@ -186,12 +199,9 @@ main
             cout << "Help functionality has not been implemented as yet!" << endl;
             cout << endl;
         }
-
 		valueReturn = lexer_p->yylex();
     }
-
     printf("\n");
     printf("Value returned from the yylex function = %d\n", valueReturn);
-
     return(0);
 }
