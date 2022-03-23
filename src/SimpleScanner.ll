@@ -222,8 +222,6 @@ main
     )
     {
         // Do nothing. This code is just here to keep the compiler from complaining.
-
-        // Test comment.
     }
 
     // Prevent the Compiler from complaining that the following function is unused.
