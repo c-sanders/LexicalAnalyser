@@ -54,13 +54,14 @@ using std::endl;
 
 #define UUID                100
 #define COMMAND_ECHO_UUID   101
-#define COMMAND_CONNECT     102
-#define COMMAND_DISCONNECT  103
-#define COMMAND_EXIT        104
-#define COMMAND_QUIT        105
-#define COMMAND_HELP        106
-#define LPAREN              107
-#define RPAREN              108
+#define COMMAND_CREATE_NODE 102
+#define COMMAND_CONNECT     103
+#define COMMAND_DISCONNECT  104
+#define COMMAND_EXIT        105
+#define COMMAND_QUIT        106
+#define COMMAND_HELP        107
+#define LPAREN              108
+#define RPAREN              109
 #define RETURN_VALUE(returnCode)
 
 #else
@@ -82,6 +83,14 @@ using std::endl;
 
 
 %%
+
+    /*
+     * Grammar for defining valid UUID values.
+     *
+     * Example of a valid UUID value;
+     *
+     *   028F37D3-6398-773F-8CF9-3829F7D3AA02
+     */
 
 [0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}  {
 
@@ -116,6 +125,38 @@ using std::endl;
     // RETURN_VALUE(COMMAND_ECHO_UUID);
 
     return(COMMAND_ECHO_UUID);
+}
+
+[_a-zA-Z]{1}[_a-zA-Z0-9]{254} {
+
+    cout << endl;
+    cout << "Scanner/Tokenizer has encountered the token : Valid variable name" << endl;
+	cout << "Length of token in chars                = " << strlen(yytext) << endl;
+	cout << "Address in memory of token              = " << & yytext << endl;
+	cout << "Value of COMMAND_CREATE_NODE Token type = " << COMMAND_CREATE_NODE << endl;
+    cout << endl;
+
+    // Where does the following value get returned to?
+
+    // RETURN_VALUE(COMMAND_CREATE_NODE);
+
+    return(COMMAND_CREATE_NODE);
+}
+
+"createNode" {
+
+    cout << endl;
+    cout << "Scanner/Tokenizer has encountered the token : createNode" << endl;
+	cout << "Length of token in chars                = " << strlen(yytext) << endl;
+	cout << "Address in memory of token              = " << & yytext << endl;
+	cout << "Value of COMMAND_CREATE_NODE Token type = " << COMMAND_CREATE_NODE << endl;
+    cout << endl;
+
+    // Where does the following value get returned to?
+
+    // RETURN_VALUE(COMMAND_CREATE_NODE);
+
+    return(COMMAND_CREATE_NODE);
 }
 
 "connect"  {
@@ -172,8 +213,13 @@ using std::endl;
 "//".*           /* Don't process C++ style line comments.
                     Recall that flex's default action is to discard any characters which match. */
 [ \t\n]          ;
-.                {printf("The Scanner/Tokenizer has encountered the following character which is either invalid, or does not form part of a keyword : %c\n", yytext[0]);}
+.                {
+    cout << "The Scanner/Tokenizer has encountered the following character which is either ";
+    cout << "invalid, or does not form part of a keyword : " << yytext[0] << endl;
+}
+
 %%
+
 // The function yywrap will be called by the Lexer when the input is exhausted.
 //
 // Return 0 if more processing is required or 1 otherwise.
@@ -197,6 +243,33 @@ yyFlexLexer::yywrap
 }
 
 
+// -------------------------------------------------------------------------------------------------
+// Forward declaration of functions
+// -------------------------------------------------------------------------------------------------
+
+void
+setupRoutine
+(
+ int         *,
+ int         *,
+ int         *,
+ yyFlexLexer *
+);
+
+
+void
+displayStartupMessage
+(
+ void
+);
+
+
+/*
+ * Does the following code behave as a Parser?
+ *
+ * The reason I ask this is because it creates a Lexer (an instance of yyFlexLexer) and invokes it.
+ */
+
 int
 main
 (
@@ -212,55 +285,22 @@ main
 	yyFlexLexer * lexer_p = new yyFlexLexer();
 
 
-    // Prevent the Compiler from complaining that the following variables are unused.
-
-    if
+    setupRoutine
     (
-     (num_lines  == 0) &&
-     (num_chars  == 0) &&
-     (countWords == 0)
-    )
-    {
-        // Do nothing. This code is just here to keep the compiler from complaining.
-    }
+     & num_lines,
+     & num_chars,
+     & countWords,
+     lexer_p
+    );
 
-    // Prevent the Compiler from complaining that the following function is unused.
+    displayStartupMessage();
 
-    if (false)
-    {
-        char   buffer[10] = "";
-
-
-		if (strlen(buffer) == 0)
-		{
-		    // Do nothing. This code is just here to keep the compiler from complaining.
-		}
-
-		// lexer_p->yyunput(0, buffer);
-    }
-
-    cout << endl;
-    cout << "================================================================================" << endl;
-    cout << "This is a very basic Lexical Scanner which has been implemented using GNU Flex. " << endl;
-    cout << endl;
-    cout << "Enter some characters on the line and then press Enter when you are done.       " << endl;
-    cout << endl;
-    cout << "Press Ctrl + D on a line all by itself to finish passing characters to the      " << endl;
-    cout << "Lexical Scanner and by doing so, causing it to quit.                            " << endl;
-    cout << ""                                                                                 << endl;
-    cout << "List of valid keywords which the Scanner will understand;"                        << endl;
-    cout << ""                                                                                 << endl;
-    cout << "  help"                                                                           << endl;
-    cout << "  echoUUID"                                                                       << endl;
-    cout << "  connect"                                                                        << endl;
-    cout << "  disconnect"                                                                     << endl;
-    cout << "  quit"                                                                           << endl;
-    cout << "================================================================================" << endl;
-    cout << endl;
-
-    // Start the yylex function running.
+    // Ask the Lexer/Tokeniser for the next available token from the pipeline.
     //
-    // Is it a bit like an Event loop? Will it run until it is instructed to stop?
+    // Keep doing this inside of a loop until the Lexer returns one of three possible values which
+    // should force the loop to exit.
+    //
+    // The Lexer is pointed to by the variable lexer_p.
 
     while
     (
@@ -271,9 +311,7 @@ main
     {
         valueReturn = lexer_p->yylex();
 
-        // The yylex function has returned.
-        //
-        // Check its return value.
+        // Display the value of the token which has been returned by the Lexer.
 
         cout << endl;
         cout << "Value returned from the yylex function = " << valueReturn << endl;
@@ -281,4 +319,68 @@ main
 
 
     return(0);
+}
+
+
+void
+setupRoutine
+(
+ int         * num_lines_p,
+ int         * num_chars_p,
+ int         * countWords_p,
+ yyFlexLexer * lexer_p
+)
+{
+    // char   buffer[10] = "";
+
+
+    // By receiving the three variables as arguments, this function effectively prevents the
+    // Compiler from complaining that the variables which are passed to it are unused.
+
+    // Prevent the Compiler from complaining that the following function is unused.
+
+    // lexer_p->yyunput(0, buffer);
+
+    /*
+    if (false)
+    {
+
+
+
+		if (strlen(buffer) == 0)
+		{
+		    // Do nothing. This code is just here to keep the compiler from complaining.
+		}
+
+		// lexer_p->yyunput(0, buffer);
+    }
+     */
+}
+
+
+void
+displayStartupMessage
+(
+ void
+)
+{
+    cout << endl
+         << "================================================================================" << endl
+         << "This is a very basic Lexical Scanner which has been implemented using GNU Flex. " << endl
+                                                                                               << endl
+         << "Enter some characters on the line and then press Enter when you are done.       " << endl
+                                                                                               << endl
+         << "Press Ctrl + D on a line all by itself to finish passing characters to the      " << endl
+         << "Lexical Scanner and by doing so, causing it to quit.                            " << endl
+                                                                                               << endl
+         << "List of valid keywords which the Scanner will understand;"                        << endl
+                                                                                               << endl
+         << "  help"                                                                           << endl
+         << "  echoUUID"                                                                       << endl
+         << "  createNode"                                                                     << endl
+         << "  connect"                                                                        << endl
+         << "  disconnect"                                                                     << endl
+         << "  quit"                                                                           << endl
+         << "================================================================================" << endl
+         << endl;
 }
