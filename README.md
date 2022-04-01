@@ -1,0 +1,192 @@
+Filename : README
+*****************
+
+
+1) Introduction
+---------------
+
+This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
+Lexical Analyser is implemented in the C programming language by the GNU Flex program, whilst the
+rest of it is implemented using the C++ programming language.
+
+Don't let the above description confuse you! It doesn't mean that the Lexical Analyser can only be
+used to recognise C and/or C++ source code. It means only what it says - and that is that the
+Lexical Analyser was implemented using the C and C++ programming languages.
+
+
+2) How to process this package
+------------------------------
+
+This package is designed to be processed by the GNU Autotools suite of tools, and the remainder of
+this file will explain how to do just that. Processing the package in the manner described below,
+will cause it to become a GNU Autotools project.
+
+To begin the process of turning this package into a GNU Autotools project, cd to the directory
+which contains this file, and then execute the following two commands from within it ;
+
+  > libtoolize
+  > autoreconf
+
+The autoreconf command may complain that a number of required files cannot be found. However,
+don't worry about this, because the autoreconf command also informs us that this problem can be
+rectified by executing the command ;
+
+  automake --add-missing
+
+Execute this command, and if it is successful, then execute the autoreconf command one more time.
+
+If all of these commands executed successfully, then the package should now be setup as a GNU
+Autotools project. If this is indeed the case, then a file called configure should have been created
+in the same directory as this file.
+
+
+3) What to do next
+------------------
+
+Read the INSTALL file for instructions on how to use this configure script. It will explain how to
+configure, build, and then install the Lexical Analyser and any of its associated files.
+
+Invoking this package's configure script with the --help option, will display the list of options
+options which are available for this script. Doing this should result in the following;
+
+	01 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
+	02
+	03 Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
+	04
+	05 To assign environment variables (e.g., CC, CFLAGS...), specify them as
+	06 VAR=VALUE.  See below for descriptions of some of the useful variables.
+	07
+	08 Defaults for the options are specified in brackets.
+	09
+	10 Configuration:
+	11   -h, --help              display this help and exit
+	12       --help=short        display options specific to this package
+    13       --help=recursive    display the short help of all the included packages
+    14   -V, --version           display version information and exit
+    15   -q, --quiet, --silent   do not print `checking ...' messages
+    16       --cache-file=FILE   cache test results in FILE [disabled]
+    17   -C, --config-cache      alias for `--cache-file=config.cache'
+    18   -n, --no-create         do not create output files
+    19       --srcdir=DIR        find the sources in DIR [configure dir or `..']
+    20
+    21 Installation directories:
+    22   --prefix=PREFIX         install architecture-independent files in PREFIX
+    23                           [/usr/local]
+    24   --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+    25                           [PREFIX]
+    26
+    27 By default, `make install' will install all the files in
+    28 `/usr/local/bin', `/usr/local/lib' etc.  You can specify
+    29 an installation prefix other than `/usr/local' using `--prefix',
+    30 for instance `--prefix=$HOME'.
+    31
+    32 For better control, use the options below.
+    33
+    34 Fine tuning of the installation directories:
+    35   --bindir=DIR            user executables [EPREFIX/bin]
+    36   --sbindir=DIR           system admin executables [EPREFIX/sbin]
+    37   --libexecdir=DIR        program executables [EPREFIX/libexec]
+    38   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+    39   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+    40   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+    41   --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+    42   --libdir=DIR            object code libraries [EPREFIX/lib]
+    43   --includedir=DIR        C header files [PREFIX/include]
+    44   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
+    45   --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
+    46   --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
+    47   --infodir=DIR           info documentation [DATAROOTDIR/info]
+    48   --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
+    49   --mandir=DIR            man documentation [DATAROOTDIR/man]
+    50   --docdir=DIR            documentation root [DATAROOTDIR/doc/simplescanner]
+    51   --htmldir=DIR           html documentation [DOCDIR]
+    52   --dvidir=DIR            dvi documentation [DOCDIR]
+    53   --pdfdir=DIR            pdf documentation [DOCDIR]
+    54   --psdir=DIR             ps documentation [DOCDIR]
+    55
+    56 Program names:
+    57   --program-prefix=PREFIX            prepend PREFIX to installed program names
+    58   --program-suffix=SUFFIX            append SUFFIX to installed program names
+    59   --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+    60
+    61 System types:
+    62   --build=BUILD     configure for building on BUILD [guessed]
+    63   --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+    64
+    65 Optional Features:
+    66   --disable-option-checking  ignore unrecognized --enable/--with options
+	67   --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+	68   --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+	69   --enable-silent-rules   less verbose build output (undo: "make V=1")
+	70   --disable-silent-rules  verbose build output (undo: "make V=0")
+	71   --enable-dependency-tracking
+	72                           do not reject slow dependency extractors
+      --disable-dependency-tracking
+                              speeds up one-time build
+      --enable-shared[=PKGS]  build shared libraries [default=yes]
+      --enable-static[=PKGS]  build static libraries [default=yes]
+      --enable-fast-install[=PKGS]
+                              optimize for fast installation [default=yes]
+      --disable-libtool-lock  avoid locking (might break parallel builds)
+
+    Optional Packages:
+      --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+      --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+      --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
+                              both]
+      --with-aix-soname=aix|svr4|both
+                              shared library versioning (aka "SONAME") variant to
+                              provide on AIX, [default=aix].
+      --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
+      --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
+                              compiler's sysroot if not specified).
+
+    Some influential environment variables:
+      CC          C compiler command
+      CFLAGS      C compiler flags
+      LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+                  nonstandard directory <lib dir>
+      LIBS        libraries to pass to the linker, e.g. -l<library>
+      CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+                  you have headers in a nonstandard directory <include dir>
+      CXX         C++ compiler command
+      CXXFLAGS    C++ compiler flags
+      YACC        The `Yet Another Compiler Compiler' implementation to use.
+                  Defaults to the first program found out of: `bison -y', `byacc',
+                  `yacc'.
+      YFLAGS      The list of arguments that will be passed by default to $YACC.
+                  This script will default YFLAGS to the empty string to avoid a
+                  default value of `-d' given by some make applications.
+      LT_SYS_LIBRARY_PATH
+                  User-defined run-time library search path.
+      CPP         C preprocessor
+      CXXCPP      C++ preprocessor
+
+    Use these variables to override the choices made by `configure' or to help
+    it to find libraries and programs with nonstandard names/locations.
+
+    Report bugs to the package provider.
+
+The configure script for this package will need to know two things in particular;
+
+    - where it can find the Flex package, and
+    - where it can find the GNU Bison package.
+
+Note however, that this configure script doesn't provide options for detecting either the Flex
+package or the GNU Bison package. That is, it doesn't provide either of the following two options;
+
+    --with-flex[=ARG]
+    --with-bison[=ARG]
+
+Thus, in order to specify the location for both of these two packages, environment variables will
+need to be used instead, as was hinted at above. An example of how to do this is shown below;
+
+    LEX=/home/craig/local/flex-2.6.4/bin/flex \
+    BISON=/home/craig/local/bison-3.8/bin/bison \
+    ./configure --disable-dependency-tracking \
+                --prefix=/home/craig/local/LexicalAnalyser_new \
+                --exec-prefix=/home/craig/local/LexicalAnalyser_new
+
+Note that the first two lines of the
+
+
