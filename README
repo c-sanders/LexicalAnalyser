@@ -49,42 +49,42 @@ configure, build, and then install the Lexical Analyser and any of its associate
 Invoking this package's configure script with the --help option, will display the list of options
 options which are available for this script. Doing this should result in the following;
 
-    `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
-
-    Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
-
-    To assign environment variables (e.g., CC, CFLAGS...), specify them as
-    VAR=VALUE.  See below for descriptions of some of the useful variables.
-
-    Defaults for the options are specified in brackets.
-
-    Configuration:
-      -h, --help              display this help and exit
-          --help=short        display options specific to this package
-          --help=recursive    display the short help of all the included packages
-      -V, --version           display version information and exit
-      -q, --quiet, --silent   do not print `checking ...' messages
-          --cache-file=FILE   cache test results in FILE [disabled]
-      -C, --config-cache      alias for `--cache-file=config.cache'
-      -n, --no-create         do not create output files
-          --srcdir=DIR        find the sources in DIR [configure dir or `..']
-
-    Installation directories:
-      --prefix=PREFIX         install architecture-independent files in PREFIX
-                              [/usr/local]
-      --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
-                              [PREFIX]
-
-    By default, `make install' will install all the files in
-    `/usr/local/bin', `/usr/local/lib' etc.  You can specify
-    an installation prefix other than `/usr/local' using `--prefix',
-    for instance `--prefix=$HOME'.
-
-    For better control, use the options below.
-
-    Fine tuning of the installation directories:
-      --bindir=DIR            user executables [EPREFIX/bin]
-      --sbindir=DIR           system admin executables [EPREFIX/sbin]
+    01 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
+    02
+    03 Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
+    04
+    05 To assign environment variables (e.g., CC, CFLAGS...), specify them as
+    06 VAR=VALUE.  See below for descriptions of some of the useful variables.
+    07
+    08 Defaults for the options are specified in brackets.
+    09
+    10 Configuration:
+    11   -h, --help              display this help and exit
+    12       --help=short        display options specific to this package
+    13       --help=recursive    display the short help of all the included packages
+    14   -V, --version           display version information and exit
+    15   -q, --quiet, --silent   do not print `checking ...' messages
+    16       --cache-file=FILE   cache test results in FILE [disabled]
+    17   -C, --config-cache      alias for `--cache-file=config.cache'
+    18   -n, --no-create         do not create output files
+    19       --srcdir=DIR        find the sources in DIR [configure dir or `..']
+    20
+    21 Installation directories:
+    22   --prefix=PREFIX         install architecture-independent files in PREFIX
+    23                           [/usr/local]
+    24   --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+    25                           [PREFIX]
+    26
+    27 By default, `make install' will install all the files in
+    28 `/usr/local/bin', `/usr/local/lib' etc.  You can specify
+    29 an installation prefix other than `/usr/local' using `--prefix',
+    30 for instance `--prefix=$HOME'.
+    31
+    32 For better control, use the options below.
+    33
+    34 Fine tuning of the installation directories:
+    35   --bindir=DIR            user executables [EPREFIX/bin]
+    36   --sbindir=DIR           system admin executables [EPREFIX/sbin]
       --libexecdir=DIR        program executables [EPREFIX/libexec]
       --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
       --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
@@ -187,6 +187,6 @@ need to be used instead, as was hinted at above. An example of how to do this is
                 --prefix=/home/craig/local/LexicalAnalyser_new \
                 --exec-prefix=/home/craig/local/LexicalAnalyser_new
 
-Note that the first two lines of the 
+Note that the first two lines of the
 
 
