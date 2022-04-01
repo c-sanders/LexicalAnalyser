@@ -49,88 +49,88 @@ configure, build, and then install the Lexical Analyser and any of its associate
 Invoking this package's configure script with the --help option, will display the list of options
 options which are available for this script. Doing this should result in the following;
 
-	01 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
-	02
-	03 Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
-	04
-	05 To assign environment variables (e.g., CC, CFLAGS...), specify them as
-	06 VAR=VALUE.  See below for descriptions of some of the useful variables.
-	07
-	08 Defaults for the options are specified in brackets.
-	09
-	10 Configuration:
-	11   -h, --help              display this help and exit
-	12       --help=short        display options specific to this package
-    13       --help=recursive    display the short help of all the included packages
-    14   -V, --version           display version information and exit
-    15   -q, --quiet, --silent   do not print `checking ...' messages
-    16       --cache-file=FILE   cache test results in FILE [disabled]
-    17   -C, --config-cache      alias for `--cache-file=config.cache'
-    18   -n, --no-create         do not create output files
-    19       --srcdir=DIR        find the sources in DIR [configure dir or `..']
-    20
-    21 Installation directories:
-    22   --prefix=PREFIX         install architecture-independent files in PREFIX
-    23                           [/usr/local]
-    24   --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
-    25                           [PREFIX]
-    26
-    27 By default, `make install' will install all the files in
-    28 `/usr/local/bin', `/usr/local/lib' etc.  You can specify
-    29 an installation prefix other than `/usr/local' using `--prefix',
-    30 for instance `--prefix=$HOME'.
-    31
-    32 For better control, use the options below.
-    33
-    34 Fine tuning of the installation directories:
-    35   --bindir=DIR            user executables [EPREFIX/bin]
-    36   --sbindir=DIR           system admin executables [EPREFIX/sbin]
-    37   --libexecdir=DIR        program executables [EPREFIX/libexec]
-    38   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
-    39   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
-    40   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
-    41   --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
-    42   --libdir=DIR            object code libraries [EPREFIX/lib]
-    43   --includedir=DIR        C header files [PREFIX/include]
-    44   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
-    45   --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
-    46   --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
-    47   --infodir=DIR           info documentation [DATAROOTDIR/info]
-    48   --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
-    49   --mandir=DIR            man documentation [DATAROOTDIR/man]
-    50   --docdir=DIR            documentation root [DATAROOTDIR/doc/simplescanner]
-    51   --htmldir=DIR           html documentation [DOCDIR]
-    52   --dvidir=DIR            dvi documentation [DOCDIR]
-    53   --pdfdir=DIR            pdf documentation [DOCDIR]
-    54   --psdir=DIR             ps documentation [DOCDIR]
-    55
-    56 Program names:
-    57   --program-prefix=PREFIX            prepend PREFIX to installed program names
-    58   --program-suffix=SUFFIX            append SUFFIX to installed program names
-    59   --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
-    60
-    61 System types:
-    62   --build=BUILD     configure for building on BUILD [guessed]
-    63   --host=HOST       cross-compile to build programs to run on HOST [BUILD]
-    64
-    65 Optional Features:
-    66   --disable-option-checking  ignore unrecognized --enable/--with options
-	67   --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
-	68   --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
-	69   --enable-silent-rules   less verbose build output (undo: "make V=1")
-	70   --disable-silent-rules  verbose build output (undo: "make V=0")
-	71   --enable-dependency-tracking
-	72                           do not reject slow dependency extractors
-      --disable-dependency-tracking
-                              speeds up one-time build
-      --enable-shared[=PKGS]  build shared libraries [default=yes]
-      --enable-static[=PKGS]  build static libraries [default=yes]
-      --enable-fast-install[=PKGS]
-                              optimize for fast installation [default=yes]
-      --disable-libtool-lock  avoid locking (might break parallel builds)
-
-    Optional Packages:
-      --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
+	001 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
+	002
+	003 Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
+	004
+	005 To assign environment variables (e.g., CC, CFLAGS...), specify them as
+	006 VAR=VALUE.  See below for descriptions of some of the useful variables.
+	007
+	008 Defaults for the options are specified in brackets.
+	009
+	010 Configuration:
+	011   -h, --help              display this help and exit
+	012       --help=short        display options specific to this package
+	013       --help=recursive    display the short help of all the included packages
+	014   -V, --version           display version information and exit
+	015   -q, --quiet, --silent   do not print `checking ...' messages
+	016       --cache-file=FILE   cache test results in FILE [disabled]
+	017   -C, --config-cache      alias for `--cache-file=config.cache'
+	018   -n, --no-create         do not create output files
+	019       --srcdir=DIR        find the sources in DIR [configure dir or `..']
+	020
+	021 Installation directories:
+	022   --prefix=PREFIX         install architecture-independent files in PREFIX
+	023                           [/usr/local]
+	024   --exec-prefix=EPREFIX   install architecture-dependent files in EPREFIX
+	025                           [PREFIX]
+	026
+	027 By default, `make install' will install all the files in
+	028 `/usr/local/bin', `/usr/local/lib' etc.  You can specify
+	029 an installation prefix other than `/usr/local' using `--prefix',
+	030 for instance `--prefix=$HOME'.
+	031
+	032 For better control, use the options below.
+	033
+	034 Fine tuning of the installation directories:
+	035   --bindir=DIR            user executables [EPREFIX/bin]
+	036   --sbindir=DIR           system admin executables [EPREFIX/sbin]
+	037   --libexecdir=DIR        program executables [EPREFIX/libexec]
+	038   --sysconfdir=DIR        read-only single-machine data [PREFIX/etc]
+	039   --sharedstatedir=DIR    modifiable architecture-independent data [PREFIX/com]
+	040   --localstatedir=DIR     modifiable single-machine data [PREFIX/var]
+	041   --runstatedir=DIR       modifiable per-process data [LOCALSTATEDIR/run]
+	042   --libdir=DIR            object code libraries [EPREFIX/lib]
+	043   --includedir=DIR        C header files [PREFIX/include]
+	044   --oldincludedir=DIR     C header files for non-gcc [/usr/include]
+	045   --datarootdir=DIR       read-only arch.-independent data root [PREFIX/share]
+	046   --datadir=DIR           read-only architecture-independent data [DATAROOTDIR]
+	047   --infodir=DIR           info documentation [DATAROOTDIR/info]
+	048   --localedir=DIR         locale-dependent data [DATAROOTDIR/locale]
+	049   --mandir=DIR            man documentation [DATAROOTDIR/man]
+	050   --docdir=DIR            documentation root [DATAROOTDIR/doc/simplescanner]
+	051   --htmldir=DIR           html documentation [DOCDIR]
+	052   --dvidir=DIR            dvi documentation [DOCDIR]
+	053   --pdfdir=DIR            pdf documentation [DOCDIR]
+	054   --psdir=DIR             ps documentation [DOCDIR]
+	055
+	056 Program names:
+	057   --program-prefix=PREFIX            prepend PREFIX to installed program names
+	058   --program-suffix=SUFFIX            append SUFFIX to installed program names
+	059   --program-transform-name=PROGRAM   run sed PROGRAM on installed program names
+	060
+	061 System types:
+	062   --build=BUILD     configure for building on BUILD [guessed]
+	063   --host=HOST       cross-compile to build programs to run on HOST [BUILD]
+	064
+	065 Optional Features:
+	066   --disable-option-checking  ignore unrecognized --enable/--with options
+	067   --disable-FEATURE       do not include FEATURE (same as --enable-FEATURE=no)
+	068   --enable-FEATURE[=ARG]  include FEATURE [ARG=yes]
+	069   --enable-silent-rules   less verbose build output (undo: "make V=1")
+	070   --disable-silent-rules  verbose build output (undo: "make V=0")
+	071   --enable-dependency-tracking
+	072                           do not reject slow dependency extractors
+	073   --disable-dependency-tracking
+	074                           speeds up one-time build
+	075   --enable-shared[=PKGS]  build shared libraries [default=yes]
+	076   --enable-static[=PKGS]  build static libraries [default=yes]
+	077   --enable-fast-install[=PKGS]
+	078                           optimize for fast installation [default=yes]
+	079   --disable-libtool-lock  avoid locking (might break parallel builds)
+	080
+	081 Optional Packages:
+	082   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
       --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
       --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
                               both]
