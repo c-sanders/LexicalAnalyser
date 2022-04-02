@@ -44,7 +44,7 @@ Autotools project. If this is indeed the case, then a file called configure shou
 in the same directory as this file.
 
 
-### 3) What to do next
+### 3) Configuring this package
 
 Read the INSTALL file for instructions on how to use this configure script. It will explain how to
 configure, build, and then install the Lexical Analyser and any of its associated files.
