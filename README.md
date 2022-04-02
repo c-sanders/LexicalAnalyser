@@ -192,7 +192,7 @@ provide options which are anything like the following;
   - --with-bison[=ARG]
 
 Therefore, in order to inform the configure script of the location for both of these two packages,
-environment variables will need to be used instead. These are mentioned in lines 93 to 112 of the
+environment variables will need to be used instead. These are mentioned in lines 93 - 112 of the
 output from the configure script, as was listed above.
 
 An example of how to use environment variables to accomplish this task is shown below;
