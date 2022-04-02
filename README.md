@@ -52,8 +52,11 @@ in the same directory as this file.
 Read the INSTALL file for instructions on how to use this configure script. It will explain how to
 configure, build, and then install the Lexical Analyser and any of its associated files.
 
-Invoking this package's configure script with the --help option, will display the list of options
-options which are available for this script. Doing this should result in the following;
+Invoking this package's configure script with the --help option, will display a myriad of
+information which pertains to the invocation of the configure script. Some of this information
+includes the list of options which can be used in the invocation of this script. Doing this should
+result in the following;
+
 ```
 001 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
 002
@@ -187,8 +190,9 @@ which are anything like the following;
   - --with-flex[=ARG]
   - --with-bison[=ARG]
 
-Therefore, in order to specify the location for both of these two packages, environment variables
-will need to be used instead, as is referred to in line 93 hinted at above.
+Therefore, in order to inform the configure script of the location for both of these two packages,
+environment variables will need to be used instead. These are mentioned in lines 93 to 112 of the
+output from the configure --help as is referred to in line 93 hinted at above.
 
 An example of how to do this is shown below;
 
