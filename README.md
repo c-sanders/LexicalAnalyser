@@ -1,5 +1,4 @@
-Filename : README
-*****************
+Filename : README.md
 
 
 ## 1) Introduction
@@ -13,7 +12,7 @@ Don't let the above description confuse you! It doesn't mean that the Lexical An
 used to recognise C and/or C++ source code. It means only what it says - and that is that the
 Lexical Analyser was implemented using the C and C++ programming languages.
 
-A point that is worth noting about the package that implements the Flex utility, is that it is not
+A point that is worth noting about the package which implements the Flex utility, is that it is not
 actually a GNU package. As a result, you will not be able to find information about it on the GNU
 website. Instead, information about the package can be found at;
 
