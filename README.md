@@ -206,3 +206,14 @@ i.e. LEX and BISON, whilst the next two lines are responsible for the invocation
 script.
 
 
+### 4) Building this package
+
+If the configure script runs successfully, then all that remains to be done is to build this
+package and then install it into the required directory.
+
+  make
+  make install
+
+The first command should build the package, while the second
+
+
