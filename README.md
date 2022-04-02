@@ -175,17 +175,17 @@ options which are available for this script. Doing this should result in the fol
 ```
 
 Of all the information that can be passed to this configure script, there are two pieces of
-information in particular that it needs to know about.
+information in particular that the configure script needs to know about.
 
   1) where it can find the Flex package, and
   2) where it can find the GNU Bison package.
 
-Note however, that this configure script doesn't provide options for detecting either the Flex
-package or the GNU Bison package. That is, it doesn't provide options which are anything like the
-following;
+Having stated this however, note that this configure script doesn't provide options for detecting
+either the Flex package or the GNU Bison package. That is, it doesn't provide options which are
+anything like the following;
 
-  --with-flex[=ARG]
-  --with-bison[=ARG]
+  - --with-flex[=ARG]
+  - --with-bison[=ARG]
 
 Thus, in order to specify the location for both of these two packages, environment variables will
 need to be used instead, as was hinted at above. An example of how to do this is shown below;
