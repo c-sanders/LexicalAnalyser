@@ -54,8 +54,8 @@ configure, build, and then install the Lexical Analyser and any of its associate
 
 Invoking this package's configure script with the --help option, will display a myriad of
 information which pertains to the invocation of the configure script. Some of this information
-includes the list of options which can be used in the invocation of this script. Doing this should
-result in the following;
+includes the list of options which can be used in the invocation of the configure script. Invoking
+the configure script with the --help option should result in the following output;
 
 ```
 001 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
@@ -183,18 +183,19 @@ information in particular that the configure script needs to know about.
   1) where it can find the Flex package, and
   2) where it can find the GNU Bison package.
 
-Having stated this however, it needs to be noted that this configure script doesn't provide options
-for detecting either the Flex package or the GNU Bison package. That is, it doesn't provide options
-which are anything like the following;
+Having stated this however, it needs to be pointed out that you can't pass this information to the
+configure script by way of configure script options. Put another way, the configure script doesn't
+provide options for detecting either the Flex package or the GNU Bison package. That is, it doesn't
+provide options which are anything like the following;
 
   - --with-flex[=ARG]
   - --with-bison[=ARG]
 
 Therefore, in order to inform the configure script of the location for both of these two packages,
 environment variables will need to be used instead. These are mentioned in lines 93 to 112 of the
-output from the configure --help as is referred to in line 93 hinted at above.
+output from the configure script, as was listed above.
 
-An example of how to do this is shown below;
+An example of how to use environment variables to accomplish this task is shown below;
 
 ```
 LEX=/home/craig/local/flex-2.6.4/bin/flex \
@@ -204,6 +205,6 @@ BISON=/home/craig/local/bison-3.8/bin/bison \
             --exec-prefix=/home/craig/local/LexicalAnalyser_new
 ```
 
-Note that the first two lines of the
+Note that the first two lines of the of this example setup the two necessary environment variables.
 
 
