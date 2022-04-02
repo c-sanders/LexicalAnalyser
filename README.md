@@ -1,7 +1,7 @@
 Filename : README.md
 
 
-## 1) Introduction
+### 1) Introduction
 
 
 This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
@@ -19,7 +19,7 @@ website. Instead, information about the package can be found at;
   https://github.com/westes/flex
 
 
-## 2) How to process this package
+### 2) How to process this package
 
 This package is designed to be processed by the GNU Autotools suite of tools, and the remainder of
 this file will explain how to do just that. Processing the package in the manner described below,
@@ -44,7 +44,7 @@ Autotools project. If this is indeed the case, then a file called configure shou
 in the same directory as this file.
 
 
-## 3) What to do next
+### 3) What to do next
 
 Read the INSTALL file for instructions on how to use this configure script. It will explain how to
 configure, build, and then install the Lexical Analyser and any of its associated files.
