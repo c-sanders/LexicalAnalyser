@@ -180,21 +180,25 @@ information in particular that the configure script needs to know about.
   1) where it can find the Flex package, and
   2) where it can find the GNU Bison package.
 
-Having stated this however, it is worth noting that this configure script doesn't provide options
+Having stated this however, it needs to be noted that this configure script doesn't provide options
 for detecting either the Flex package or the GNU Bison package. That is, it doesn't provide options
 which are anything like the following;
 
   - --with-flex[=ARG]
   - --with-bison[=ARG]
 
-Thus, in order to specify the location for both of these two packages, environment variables will
-need to be used instead, as was hinted at above. An example of how to do this is shown below;
+Therefore, in order to specify the location for both of these two packages, environment variables
+will need to be used instead, as is referred to in line 93 hinted at above.
 
-    LEX=/home/craig/local/flex-2.6.4/bin/flex \
-    BISON=/home/craig/local/bison-3.8/bin/bison \
-    ./configure --disable-dependency-tracking \
-                --prefix=/home/craig/local/LexicalAnalyser_new \
-                --exec-prefix=/home/craig/local/LexicalAnalyser_new
+An example of how to do this is shown below;
+
+```
+LEX=/home/craig/local/flex-2.6.4/bin/flex \
+BISON=/home/craig/local/bison-3.8/bin/bison \
+./configure --disable-dependency-tracking \
+            --prefix=/home/craig/local/LexicalAnalyser_new \
+            --exec-prefix=/home/craig/local/LexicalAnalyser_new
+```
 
 Note that the first two lines of the
 
