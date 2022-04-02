@@ -180,9 +180,9 @@ information in particular that the configure script needs to know about.
   1) where it can find the Flex package, and
   2) where it can find the GNU Bison package.
 
-Having stated this however, note that this configure script doesn't provide options for detecting
-either the Flex package or the GNU Bison package. That is, it doesn't provide options which are
-anything like the following;
+Having stated this however, it is worth noting that this configure script doesn't provide options
+for detecting either the Flex package or the GNU Bison package. That is, it doesn't provide options
+which are anything like the following;
 
   - --with-flex[=ARG]
   - --with-bison[=ARG]
