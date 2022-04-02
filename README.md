@@ -6,12 +6,18 @@ Filename : README
 ---------------
 
 This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
-Lexical Analyser is implemented in the C programming language by the GNU Flex program, whilst the
+Lexical Analyser is implemented in the C programming language by the Flex utility, whilst the
 rest of it is implemented using the C++ programming language.
 
 Don't let the above description confuse you! It doesn't mean that the Lexical Analyser can only be
 used to recognise C and/or C++ source code. It means only what it says - and that is that the
 Lexical Analyser was implemented using the C and C++ programming languages.
+
+A point that is worth noting about the package that implements the Flex utility, is that it is not
+actually a GNU package. As a result, you will not be able to find information about it on the GNU
+website. Instead, information about the package can be found at;
+
+  https://github.com/westes/flex
 
 
 2) How to process this package
@@ -24,8 +30,8 @@ will cause it to become a GNU Autotools project.
 To begin the process of turning this package into a GNU Autotools project, cd to the directory
 which contains this file, and then execute the following two commands from within it ;
 
-  > libtoolize
-  > autoreconf
+  - libtoolize
+  - autoreconf
 
 The autoreconf command may complain that a number of required files cannot be found. However,
 don't worry about this, because the autoreconf command also informs us that this problem can be
@@ -169,8 +175,8 @@ options which are available for this script. Doing this should result in the fol
 
 The configure script for this package will need to know two things in particular;
 
-    - where it can find the Flex package, and
-    - where it can find the GNU Bison package.
+  - where it can find the Flex package, and
+  - where it can find the GNU Bison package.
 
 Note however, that this configure script doesn't provide options for detecting either the Flex
 package or the GNU Bison package. That is, it doesn't provide either of the following two options;
