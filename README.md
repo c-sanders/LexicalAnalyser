@@ -37,7 +37,7 @@ The autoreconf command may complain that a number of required files cannot be fo
 don't worry about this, because the autoreconf command also informs us that this problem can be
 rectified by executing the command ;
 
-  automake --add-missing
+  - automake --add-missing
 
 Execute this command, and if it is successful, then execute the autoreconf command one more time.
 
@@ -54,7 +54,7 @@ configure, build, and then install the Lexical Analyser and any of its associate
 
 Invoking this package's configure script with the --help option, will display the list of options
 options which are available for this script. Doing this should result in the following;
-
+```
 	001 `configure' configures SimpleScanner 0.0.1 to adapt to many kinds of systems.
 	002
 	003 Usage: /home/craig/source_code/GitHub/LexicalAnalyser_new/configure [OPTION]... [VAR=VALUE]...
@@ -172,17 +172,20 @@ options which are available for this script. Doing this should result in the fol
 	115 it to find libraries and programs with nonstandard names/locations.
 	116
 	117 Report bugs to the package provider.
+```
 
-The configure script for this package will need to know two things in particular;
+Of all the information that can be passed to this configure script, there are two pieces of
+information in particular that it needs to know about.
 
-  - where it can find the Flex package, and
-  - where it can find the GNU Bison package.
+  1) where it can find the Flex package, and
+  2) where it can find the GNU Bison package.
 
 Note however, that this configure script doesn't provide options for detecting either the Flex
-package or the GNU Bison package. That is, it doesn't provide either of the following two options;
+package or the GNU Bison package. That is, it doesn't provide options which are anything like the
+following;
 
-    --with-flex[=ARG]
-    --with-bison[=ARG]
+  --with-flex[=ARG]
+  --with-bison[=ARG]
 
 Thus, in order to specify the location for both of these two packages, environment variables will
 need to be used instead, as was hinted at above. An example of how to do this is shown below;
