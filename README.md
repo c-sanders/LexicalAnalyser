@@ -131,41 +131,41 @@ options which are available for this script. Doing this should result in the fol
 	080
 	081 Optional Packages:
 	082   --with-PACKAGE[=ARG]    use PACKAGE [ARG=yes]
-      --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
-      --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
-                              both]
-      --with-aix-soname=aix|svr4|both
-                              shared library versioning (aka "SONAME") variant to
-                              provide on AIX, [default=aix].
-      --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
-      --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
-                              compiler's sysroot if not specified).
-
-    Some influential environment variables:
-      CC          C compiler command
-      CFLAGS      C compiler flags
-      LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
-                  nonstandard directory <lib dir>
-      LIBS        libraries to pass to the linker, e.g. -l<library>
-      CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
-                  you have headers in a nonstandard directory <include dir>
-      CXX         C++ compiler command
-      CXXFLAGS    C++ compiler flags
-      YACC        The `Yet Another Compiler Compiler' implementation to use.
-                  Defaults to the first program found out of: `bison -y', `byacc',
-                  `yacc'.
-      YFLAGS      The list of arguments that will be passed by default to $YACC.
-                  This script will default YFLAGS to the empty string to avoid a
-                  default value of `-d' given by some make applications.
-      LT_SYS_LIBRARY_PATH
-                  User-defined run-time library search path.
-      CPP         C preprocessor
-      CXXCPP      C++ preprocessor
-
-    Use these variables to override the choices made by `configure' or to help
-    it to find libraries and programs with nonstandard names/locations.
-
-    Report bugs to the package provider.
+	083   --without-PACKAGE       do not use PACKAGE (same as --with-PACKAGE=no)
+	084   --with-pic[=PKGS]       try to use only PIC/non-PIC objects [default=use
+	085                           both]
+	086   --with-aix-soname=aix|svr4|both
+	087                           shared library versioning (aka "SONAME") variant to
+	088                           provide on AIX, [default=aix].
+	089   --with-gnu-ld           assume the C compiler uses GNU ld [default=no]
+	090   --with-sysroot[=DIR]    Search for dependent libraries within DIR (or the
+	091                           compiler's sysroot if not specified).
+	092
+	093 Some influential environment variables:
+	094   CC          C compiler command
+	095   CFLAGS      C compiler flags
+	096   LDFLAGS     linker flags, e.g. -L<lib dir> if you have libraries in a
+	097               nonstandard directory <lib dir>
+	098   LIBS        libraries to pass to the linker, e.g. -l<library>
+	099   CPPFLAGS    (Objective) C/C++ preprocessor flags, e.g. -I<include dir> if
+	100               you have headers in a nonstandard directory <include dir>
+	101   CXX         C++ compiler command
+	102   CXXFLAGS    C++ compiler flags
+	103   YACC        The `Yet Another Compiler Compiler' implementation to use.
+	104               Defaults to the first program found out of: `bison -y', `byacc',
+	105               `yacc'.
+	106   YFLAGS      The list of arguments that will be passed by default to $YACC.
+	107               This script will default YFLAGS to the empty string to avoid a
+	108               default value of `-d' given by some make applications.
+	109   LT_SYS_LIBRARY_PATH
+	110               User-defined run-time library search path.
+	111   CPP         C preprocessor
+	112   CXXCPP      C++ preprocessor
+	113
+	114 Use these variables to override the choices made by `configure' or to help
+	115 it to find libraries and programs with nonstandard names/locations.
+	116
+	117 Report bugs to the package provider.
 
 The configure script for this package will need to know two things in particular;
 
