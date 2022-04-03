@@ -207,14 +207,14 @@ YACC=/home/craig/local/bison-3.8/bin/bison \
 
 There are a few things which are worth noting about this example invocation.
 
-  - The first two lines of this example setup the two necessary environment variables, i.e. LEX and
-    YACC.
+  - The first two lines in the example above, setup the two necessary environment variables, i.e.
+    LEX and YACC.
   - Note that the environment variables are named LEX and YACC - not FLEX and BISON as one might
     expect. Even though this package uses the Flex and Bison utilities, the environment variables
-    are still named LEX and YACC due to historical reasons.
-  - You can't simply set and use the environment variables FLEX and BISON instead of LEX and YACC;
-    it just won't work. Even if you try and do this, the resulting Makefiles won't recognise the
-    environment variables with such names.
+    still need to be named LEX and YACC due to historical reasons.
+  - You can't get around this matter by simply setting and then using the environment variables FLEX
+    and BISON instead of LEX and YACC; it just won't work. Even if you try and do this, the
+    resulting Makefiles won't recognise the environment variables with such names.
   - The last two lines in the example invocation are what is actually responsible for the invocation
     of the configure script.
 
