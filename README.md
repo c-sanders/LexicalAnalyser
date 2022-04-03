@@ -4,14 +4,14 @@ Filename : README.md
 ### 1) Introduction
 
 
-This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
-Lexical Analyser is implemented in the C programming language by the Flex utility, whilst the
-rest of it is implemented using the C++ programming language. Don't let this description confuse
-you! It doesn't mean that the Lexical Analyser can only be used to recognise C and/or C++ source
-code. It means only what it says - and that is that the Lexical Analyser is implemented using the C
-and C++ programming languages.
+This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). A key part of
+the Lexical Analyser is implemented in the C programming language by the Flex utility, whilst the
+rest of it is implemented using the C++ programming language. Don't let this description of this
+package's implementation confuse you! It doesn't mean that the Lexical Analyser can only be used to
+process C and/or C++ source code. It means only what it says - and that is that the Lexical Analyser
+is implemented using both the C and C++ programming languages.
 
-A point that is worth noting about the package which implements the Flex utility, is that it is not
+A point that is worth noting about the package which provides the Flex utility, is that it is not
 actually a part of the GNU project. That is, it is not a GNU package; even though many people
 mistakingly think it is. As a result of this, you will not be able to find information about it on
 the GNU website. Instead, information about the package can be found at;
@@ -22,32 +22,34 @@ the GNU website. Instead, information about the package can be found at;
 ### 2) How to process this package
 
 This package is designed to be processed by the GNU Autotools suite of tools, and the remainder of
-this file will explain how to do just that. Processing the package in the manner described below,
-will cause it to become a GNU Autotools project.
+this section of the document, will explain how to do just that. Processing the package in the manner
+which is described below, will cause it to become a GNU Autotools project.
 
-To begin the process of turning this package into a GNU Autotools project, cd to the directory
-which contains this file, and then execute the following two commands from within it;
+To begin the process of turning this package into a GNU Autotools project, cd to the top-level
+directory into which the package was installed. Then, execute the following two commands from within
+it;
 
 ```
 > libtoolize
 > autoreconf
 ```
 
-The autoreconf command may complain that a number of required files cannot be found. However,
-don't worry about this, because the autoreconf command also informs us that this problem can be
-rectified by executing the command ;
+The ```autoreconf``` command may complain that a number of required files cannot be found. If this
+is the case, don't worry about it, because the ```autoreconf``` command also informs us that this
+problem can be rectified by executing the following command;
 
 ```
 > automake --add-missing
 ```
 
-Execute this command, and if it is successful, then execute the autoreconf command one more time.
+If this command needs to be executed, and if it is successful in its execution, then run the
+```autoreconf``` command one more time.
 
 If all of these commands execute successfully, then the package should now be setup as a GNU
-Autotools project. If this is indeed the case, then a file called configure should have been created
-in the top-level directory which the package has been installed into. It should be mentioned that
-this generated file named configure, will from now on be referred to throughout the remainder of
-this document as the configure script.
+Autotools project. If this is indeed the case, then a file called ```configure``` should have been
+created in the top-level directory which the package has been installed into. It should be mentioned
+that this generated file named ```configure```, will from now on be referred to throughout the
+remainder of this document as the configure script.
 
 
 ### 3) Configuring this package
@@ -197,11 +199,11 @@ provide options which are anything like the following;
   - ```--with-bison[=ARG]```
 
 Therefore, in order to inform the configure script of the locations of both of these two utilities,
-environment variables will need to be used instead. These are referred to in the output from the
-configure script which was listed above, under the section which is titled 'Some influential
-environment variables:'.
+environment variables will need to be used instead. You may have noticed that environment variables
+were referred to in the output from the configure script which was listed above, under the section
+which is titled 'Some influential environment variables:'.
 
-An example of how to use environment variables to accomplish this task is shown below;
+An example of how to use environment variables to accomplish the task at hand, is shown below;
 
 ```
 LEX=/home/craig/local/flex-2.6.4/bin/flex \
