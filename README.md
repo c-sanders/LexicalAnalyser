@@ -25,7 +25,7 @@ This package is designed to be processed by the GNU Autotools suite of tools, an
 this section of the document, will explain how to do just that. Processing the package in the manner
 which is described below, will cause it to become a GNU Autotools project.
 
-To begin the process of turning this package into a GNU Autotools project, cd to the top-level
+To begin the process of turning this package into a GNU Autotools project, change into the top-level
 directory into which the package was installed. Then, execute the following two commands from within
 it;
 
@@ -34,16 +34,16 @@ it;
 > autoreconf
 ```
 
-The ```autoreconf``` command may complain that a number of required files cannot be found. If this
-is the case, don't worry about it, because the ```autoreconf``` command also informs us that this
-problem can be rectified by executing the following command;
+The ```autoreconf``` utility may complain that a number of required files cannot be found. If this
+is the case, don't worry about it, because ```autoreconf``` also informs us that this problem can
+be rectified by executing the following command;
 
 ```
 > automake --add-missing
 ```
 
 If this command needs to be executed, and if it is successful in its execution, then run the
-```autoreconf``` command one more time.
+```autoreconf``` utility one more time.
 
 If all of these commands execute successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called ```configure``` should have been
@@ -54,12 +54,12 @@ remainder of this document as the configure script.
 
 ### 3) Configuring this package
 
-Read the INSTALL file for instructions on how to use this configure script. It will explain how to
-configure, build, and then install the Lexical Analyser and any of its associated files. However, in
-this section of this document, we will only discuss how to configure this package using its
+Read the ```INSTALL``` file for instructions on how to use the configure script. It will explain how
+to configure, build, and then install the Lexical Analyser and any of its associated files. However,
+in this section of this document, we will only discuss how to configure this package using its
 configure script.
 
-Invoking this package's configure script with the --help option, will display a myriad of
+Invoking this package's configure script with the ```--help option```, will display a myriad of
 information which pertains to the invocation of the configure script. Some of this information
 includes the list of options which can be used in the invocation of the configure script. Invoking
 the configure script with the --help option should result in the following output;
@@ -184,7 +184,7 @@ the configure script with the --help option should result in the following outpu
 117 Report bugs to the package provider.
 ```
 
-Of all the information that can be passed to this configure script, there are two pieces of
+Of all the information that can be passed to the configure script, there are two pieces of
 information in particular that the configure script needs to know about.
 
   1) where it can find the Flex package, and
@@ -243,4 +243,15 @@ resulting program out of the
 
 ### 5) Using the built package
 
-Change into the directory which the package has been installed into.
+Change into the directory which the package has been installed into. From there, then change into
+the ```src``` sub directory. Within this directory, you should find an executable file which is
+called;
+
+```
+SimpleScanner
+```
+
+This file should be able to be invoked directly from the command line in order to make it run.the
+
+
+Good luck!
