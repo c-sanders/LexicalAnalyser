@@ -26,7 +26,7 @@ this file will explain how to do just that. Processing the package in the manner
 will cause it to become a GNU Autotools project.
 
 To begin the process of turning this package into a GNU Autotools project, cd to the directory
-which contains this file, and then execute the following two commands from within it ;
+which contains this file, and then execute the following two commands from within it;
 
   - libtoolize
   - autoreconf
@@ -200,7 +200,7 @@ An example of how to use environment variables to accomplish this task is shown 
 
 ```
 LEX=/home/craig/local/flex-2.6.4/bin/flex \
-BISON=/home/craig/local/bison-3.8/bin/bison \
+YACC=/home/craig/local/bison-3.8/bin/bison \
 ./configure --prefix=/home/craig/local/LexicalAnalyser_new \
             --exec-prefix=/home/craig/local/LexicalAnalyser_new
 ```
@@ -219,7 +219,11 @@ successfully, should be able to perform these two tasks.
   - make
   - make install
 
-The first command should build the package, and if it is successful, then the second command should
-install the package in the specified location.
+The first command should build the package. If this first command is successful, then the second
+command should install the package in the specified location. Now, one should be able to run the
+resulting program out of the
 
 
+### 5) Using the built package
+
+Change into the directory which the package has been installed into.
