@@ -212,8 +212,8 @@ There are a few things which are worth noting about this example invocation.
   - Note that the environment variables are named LEX and YACC - not FLEX and BISON as one might
     expect. Even though this package uses the Flex and Bison utilities, the environment variables
     still need to be named LEX and YACC due to historical reasons.
-  - You can't get around this matter by simply setting and then using the environment variables FLEX
-    and BISON instead of LEX and YACC; it just won't work. Even if you try and do this, the
+  - You can't get around this matter by just setting and then using the environment variables FLEX
+    and BISON instead of LEX and YACC; it simply won't work. Even if you try and do this, the
     resulting Makefiles won't recognise the environment variables with such names.
   - The last two lines in the example invocation are what is actually responsible for the invocation
     of the configure script.
