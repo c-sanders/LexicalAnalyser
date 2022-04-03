@@ -6,15 +6,15 @@ Filename : README.md
 
 This package implements a basic Lexical Analyser (aka Lexer, Scanner, or Tokeniser). The bulk of the
 Lexical Analyser is implemented in the C programming language by the Flex utility, whilst the
-rest of it is implemented using the C++ programming language.
-
-Don't let the above description confuse you! It doesn't mean that the Lexical Analyser can only be
-used to recognise C and/or C++ source code. It means only what it says - and that is that the
-Lexical Analyser was implemented using the C and C++ programming languages.
+rest of it is implemented using the C++ programming language. Don't let this description confuse
+you! It doesn't mean that the Lexical Analyser can only be used to recognise C and/or C++ source
+code. It means only what it says - and that is that the Lexical Analyser is implemented using the C
+and C++ programming languages.
 
 A point that is worth noting about the package which implements the Flex utility, is that it is not
-actually a GNU package. As a result, you will not be able to find information about it on the GNU
-website. Instead, information about the package can be found at;
+actually a part of the GNU project. That is, it is not a GNU package; even though many people
+mistakingly think it is. As a result of this, you will not be able to find information about it on
+the GNU website. Instead, information about the package can be found at;
 
   https://github.com/westes/flex
 
@@ -41,7 +41,8 @@ Execute this command, and if it is successful, then execute the autoreconf comma
 
 If all of these commands execute successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called configure should have been created
-in the same directory as this file. This file will be referred to throughout the remainder of this
+in the top-level directory which the package was installed into. It should be mentioned that this
+generated file named configure, will from now on be referred to throughout the remainder of this
 document as the configure script.
 
 
@@ -209,8 +210,9 @@ script.
 
 ### 4) Building this package
 
-If the configure script runs successfully, then all that remains to be done is to build this
-package and then install it into the required directory.
+If the configure script executes successfully, then all that remains to be done, is to build this
+package and install it into the required directory. The following two commands - if they execute
+successfully, should be able to perform these two tasks.
 
   - make
   - make install
