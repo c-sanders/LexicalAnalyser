@@ -41,15 +41,17 @@ Execute this command, and if it is successful, then execute the autoreconf comma
 
 If all of these commands execute successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called configure should have been created
-in the top-level directory which the package was installed into. It should be mentioned that this
-generated file named configure, will from now on be referred to throughout the remainder of this
-document as the configure script.
+in the top-level directory which the package has been installed into. It should be mentioned that
+this generated file named configure, will from now on be referred to throughout the remainder of
+this document as the configure script.
 
 
 ### 3) Configuring this package
 
 Read the INSTALL file for instructions on how to use this configure script. It will explain how to
-configure, build, and then install the Lexical Analyser and any of its associated files.
+configure, build, and then install the Lexical Analyser and any of its associated files. However, in
+this section of this document, we will only discuss how to configure this package using its
+configure script.
 
 Invoking this package's configure script with the --help option, will display a myriad of
 information which pertains to the invocation of the configure script. Some of this information
