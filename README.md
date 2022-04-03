@@ -197,8 +197,9 @@ provide options which are anything like the following;
   - ```--with-bison[=ARG]```
 
 Therefore, in order to inform the configure script of the locations of both of these two utilities,
-environment variables will need to be used instead. These are mentioned in lines 93-112 of the
-output from the configure script, as was listed above.
+environment variables will need to be used instead. These are referred to in the output from the
+configure script which was listed above, under the section which is titled 'Some influential
+environment variables:'.
 
 An example of how to use environment variables to accomplish this task is shown below;
 
