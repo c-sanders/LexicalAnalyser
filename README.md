@@ -28,14 +28,18 @@ will cause it to become a GNU Autotools project.
 To begin the process of turning this package into a GNU Autotools project, cd to the directory
 which contains this file, and then execute the following two commands from within it;
 
-  - libtoolize
-  - autoreconf
+```
+> libtoolize
+> autoreconf
+```
 
 The autoreconf command may complain that a number of required files cannot be found. However,
 don't worry about this, because the autoreconf command also informs us that this problem can be
 rectified by executing the command ;
 
-  - automake --add-missing
+```
+> automake --add-missing
+```
 
 Execute this command, and if it is successful, then execute the autoreconf command one more time.
 
@@ -189,8 +193,8 @@ configure script by way of configure script options. Put another way, the config
 provide options for detecting either the Flex package or the GNU Bison package. That is, it doesn't
 provide options which are anything like the following;
 
-  - --with-flex[=ARG]
-  - --with-bison[=ARG]
+  - ```--with-flex[=ARG]```
+  - ```--with-bison[=ARG]```
 
 Therefore, in order to inform the configure script of the locations of both of these two utilities,
 environment variables will need to be used instead. These are mentioned in lines 93-112 of the
