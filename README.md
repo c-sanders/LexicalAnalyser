@@ -205,12 +205,14 @@ YACC=/home/craig/local/bison-3.8/bin/bison \
             --exec-prefix=/home/craig/local/LexicalAnalyser_new
 ```
 
-There are a few things which are worth noting about this example invocation. The first is that
-the first two lines of this example setup the two necessary environment variables, while the second
-thing worth noting is that the environment variables are named LEX and YACC - not FLEX and BISON as
-one might expect. Even though this package uses the Flex and Bison utilities, the environment
-variables are still named LEX and YACC due to historical reasons. Finally, the last two lines in the
-example invocation are what is actually responsible for the invocation of the configure script.
+There are a few things which are worth noting about this example invocation.
+
+  - The first two lines of this example setup the two necessary environment variables.
+  - Note that the environment variables are named LEX and YACC - not FLEX and BISON as one might
+    expect. Even though this package uses the Flex and Bison utilities, the environment variables
+    are still named LEX and YACC due to historical reasons. You can't
+  - The last two lines in the example invocation are what is actually responsible for the invocation
+    of the configure script.
 
 
 ### 4) Building this package
