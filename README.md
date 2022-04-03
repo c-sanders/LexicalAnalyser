@@ -216,7 +216,8 @@ There are a few things which are worth noting about this example invocation.
     and BISON instead of LEX and YACC; it simply won't work. Even if you try and do this, the
     resulting Makefiles won't recognise the environment variables with such names.
   - The last two lines in the example invocation are what is actually responsible for the invocation
-    of the configure script.
+    of the configure script. In this case, the configure script is assumed to reside within the
+    current directory, hence the reason it is invoked as ```./configure```.
 
 
 ### 4) Building this package
