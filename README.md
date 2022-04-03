@@ -251,7 +251,8 @@ called;
 SimpleScanner
 ```
 
-This file should be able to be invoked directly from the command line in order to make it run.the
+This file should have its permission bits set such that it is able to be invoked directly from the
+command line in order to make it run.
 
 
 Good luck!
