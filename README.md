@@ -39,9 +39,10 @@ rectified by executing the command ;
 
 Execute this command, and if it is successful, then execute the autoreconf command one more time.
 
-If all of these commands executed successfully, then the package should now be setup as a GNU
+If all of these commands execute successfully, then the package should now be setup as a GNU
 Autotools project. If this is indeed the case, then a file called configure should have been created
-in the same directory as this file.
+in the same directory as this file. This file will be referred to throughout the remainder of this
+document as the configure script.
 
 
 ### 3) Configuring this package
@@ -211,9 +212,10 @@ script.
 If the configure script runs successfully, then all that remains to be done is to build this
 package and then install it into the required directory.
 
-  make
-  make install
+  - make
+  - make install
 
-The first command should build the package, while the second
+The first command should build the package, and if it is successful, then the second command should
+install the package in the specified location.
 
 
