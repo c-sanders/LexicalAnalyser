@@ -192,7 +192,7 @@ provide options which are anything like the following;
   - --with-flex[=ARG]
   - --with-bison[=ARG]
 
-Therefore, in order to inform the configure script of the location for both of these two packages,
+Therefore, in order to inform the configure script of the locations of both of these two utilities,
 environment variables will need to be used instead. These are mentioned in lines 93-112 of the
 output from the configure script, as was listed above.
 
@@ -205,9 +205,12 @@ YACC=/home/craig/local/bison-3.8/bin/bison \
             --exec-prefix=/home/craig/local/LexicalAnalyser_new
 ```
 
-Note that the first two lines of the of this example setup the two necessary environment variables,
-i.e. LEX and BISON, whilst the next two lines are responsible for the invocation of the configure
-script.
+There are a few things which are worth noting about this example invocation. The first thing is that
+the first two lines of this example setup the two necessary environment variables, while the second
+thing worth noting is that the environment variables are named LEX and YACC - not FLEX and BISON.
+Even though this package uses the Flex and Bison utilities, the environment variables are still
+named LEX and YACC due to historical reasons. Finally, the last two lines in the example invocation
+are what is actually responsible for the invocation of the configure script.
 
 
 ### 4) Building this package
