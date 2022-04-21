@@ -228,7 +228,7 @@ There are a few things which are worth noting about this example invocation.
     
 Alternatively, the following file might be distributed as a part of this package;
 
-    ```configure_script.sh```
+```configure_script.sh```
 
 If it is, and if its permission bits are set correctly, then you should be able to run this file from the command line. This file will set a n
 
