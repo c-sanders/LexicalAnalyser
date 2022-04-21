@@ -262,8 +262,7 @@ To have ```flex``` implement the Scanner in the C++ programming language, use th
 simpleScannerCpp
 ```
 
-It is worth noting 
-Instructing ```flex``` to generate a Scanner in C++ appears to be rather problematic. Evidence for this can be found in the source code file which ```flex``` generates in this situation, as it will contain the following comment; 
+It should be noted that the C++ Scanner which ```'flex``` implements, appears to be rather problematic. One piece of the evidence for this can be found in the C++ source code file which ```flex``` generates in this situation, as it will contain the following comment; 
 
 ```
 /* The c++ scanner is a mess. The FlexLexer.h header file relies on the
