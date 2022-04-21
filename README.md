@@ -243,7 +243,7 @@ resulting program out of the
 
 ### 5) Makefile targets
 
-This project can instruct ```flex``` to build a Scanner using either - or even both if desired, the C or C++ programming languages.
+This project can instruct ```flex``` to implement a Scanner using either the C or C++ programming languages.
 
   - Building the Scanner using C code.
 
@@ -253,6 +253,9 @@ To have ```flex``` implement the Scanner in the C programming language, use the 
 simpleScannerC
 ```
 
+This will instruct the ```make``` utility to invoke ```flex``` using the following command;
+
+flex --verbose --header-file=SimpleScanner.h --outfile=${@} SimpleScanner.l
 
   - Building the Scanner using C++ code.
 
@@ -262,7 +265,7 @@ To have ```flex``` implement the Scanner in the C++ programming language, use th
 simpleScannerCpp
 ```
 
-It should be noted that the C++ Scanner which ```'flex``` implements, appears to be rather problematic. One piece of the evidence for this can be found in the C++ source code file which ```flex``` generates in this situation, as it will contain the following comment; 
+It should be noted that the C++ Scanner which ```'flex``` implements, appears to be rather problematic. One piece of the evidence in support of this argument, can be found in the C++ source code file which ```flex``` generates in this situation, as it will contain the following comment; 
 
 ```
 /* The c++ scanner is a mess. The FlexLexer.h header file relies on the
@@ -271,6 +274,10 @@ It should be noted that the C++ Scanner which ```'flex``` implements, appears to
  * We will address this in a future release of flex, or omit the C++ scanner
  * altogether.
  */
+```
+
+```
+${LEX} --verbose --c++ --prefix=Monty --header-file=SimpleScanner.hpp --outfile=${@} ${<}
 ```
 
 
