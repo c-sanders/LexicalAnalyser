@@ -230,9 +230,7 @@ Alternatively, the following file might be distributed as a part of this package
 
 ```configure_script.sh```
 
-If it is, and if its permission bits are set correctly, then a user should be able to run this file from the command line. This file will set a number of appropriate environment variables, display them to the screen, and then ask the user if they are set correctly. If they are, then the file will invoke the configure script in a similar manner to what was documented above.
-
-The screen which is displayed to the user, asking them if the environment variables are set correctly, should look similar to the following;
+If it is, and if its permission bits are set correctly, then a user should be able to run this file from the command line. This file will set a number of appropriate environment variables, display them to the screen, and then ask the user if they are set correctly. If they are, then the file will invoke the configure script in a similar manner to what was documented above. The screen which is displayed to the user, asking them if the environment variables are set correctly, should look similar to the following;
 
 ```
 ================================================================================
@@ -254,6 +252,8 @@ Are these values correct?
 
 Press 'Y' if yes, any other key otherwise > 
 ```
+
+The user should simply press ```Y or y``` followed by the ```Enter``` key if they are happy with the values of the environment variables. Otherwise, they can just press ```Enter``` and the script will exit. From there, the user can then edit the ```configure_script.sh``` file and set its environment variables to the values which they desire.
 
 
 ## 4) Building this package
