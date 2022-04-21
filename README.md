@@ -230,7 +230,30 @@ Alternatively, the following file might be distributed as a part of this package
 
 ```configure_script.sh```
 
-If it is, and if its permission bits are set correctly, then you should be able to run this file from the command line. This file will set a number of appropriate environment variables, display them to the screen, and then ask you if they are set correctly. If they are, then the file will invoke the configure script in a similar manner to what was documented above.
+If it is, and if its permission bits are set correctly, then a user should be able to run this file from the command line. This file will set a number of appropriate environment variables, display them to the screen, and then ask the user if they are set correctly. If they are, then the file will invoke the configure script in a similar manner to what was documented above.
+
+The screen which is displayed to the user, asking them if the environment variables are set correctly, should look similar to the following;
+
+```
+================================================================================
+
+Running file : configure_script.sh
+
+================================================================================
+Please check that the following variables set correctly.
+--------------------------------------------------------
+
+SRC_DIR     = /home/craig/source_code/GitHub/LexicalAnalyser_new/
+INSTALL_DIR = /home/craig/local/LexicalAnalyser_new/
+
+FLEX        = /home/craig/local/flex-2.6.4/bin/flex
+BISON       = /home/craig/local/bison-3.8/bin/bison
+================================================================================
+
+Are these values correct?
+
+Press 'Y' if yes, any other key otherwise > 
+```
 
 
 ## 4) Building this package
