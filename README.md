@@ -230,7 +230,7 @@ Alternatively, the following file might be distributed as a part of this package
 
 ```configure_script.sh```
 
-If it is, and if its permission bits are set correctly, then you should be able to run this file from the command line. This file will set a n
+If it is, and if its permission bits are set correctly, then you should be able to run this file from the command line. This file will set a number of appropriate environment variables, display them to the screen, and then ask you if they are set correctly. If they are, then the file will invoke the configure script in a similar manner to what was documented above.
 
 
 ## 4) Building this package
