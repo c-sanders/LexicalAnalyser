@@ -225,6 +225,12 @@ There are a few things which are worth noting about this example invocation.
   - The last two lines in the example invocation are what is actually responsible for the invocation
     of the configure script. In this case, the configure script is assumed to reside within the
     current directory, hence the reason it is invoked as ```./configure```.
+    
+Alternatively, the following file might be distributed as a part of this package;
+
+    ```configure_script.sh```
+
+If it is, and if its permission bits are set correctly, then you should be able to run this file from the command line. This file will set a n
 
 
 ## 4) Building this package
