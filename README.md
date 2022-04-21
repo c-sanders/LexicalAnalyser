@@ -286,10 +286,6 @@ This Makefile target will instruct the ```make``` utility to invoke ```flex``` u
 flex --verbose --c++ --prefix=Monty --header-file=SimpleScanner.hpp --outfile=SimpleScanner.cpp SimpleScanner.l
 ```
 
-```
-${LEX} --verbose --c++ --prefix=Monty --header-file=SimpleScanner.hpp --outfile=${@} ${<}
-```
-
 
 ### 5) Using the built package
 
