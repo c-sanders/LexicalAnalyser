@@ -241,6 +241,30 @@ command should install the package in the specified location. Now, one should be
 resulting program out of the
 
 
+### 5) Makefile targets
+
+This project can instruct ```flex``` to build a Scanner using either or both the C or C++ programming languages.
+
+  - Building the Scanner using C code.
+
+To have the Scanner be implemented using the C programming language, use the following ```Makefile``` target;
+
+
+
+  - Building the Scanner using C++ code.
+  
+It appears that getting ```flex``` to generate a Scanner in C++ is rather problematic, and doing so will result in the generated code containing the following comment; 
+
+```
+/* The c++ scanner is a mess. The FlexLexer.h header file relies on the
+ * following macro. This is required in order to pass the c++-multiple-scanners
+ * test in the regression suite. We get reports that it breaks inheritance.
+ * We will address this in a future release of flex, or omit the C++ scanner
+ * altogether.
+ */
+```
+
+
 ### 5) Using the built package
 
 Change into the directory which the package has been installed into. From there, then change into
