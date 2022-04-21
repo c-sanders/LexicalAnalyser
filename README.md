@@ -255,7 +255,9 @@ simpleScannerC
 
 This will instruct the ```make``` utility to invoke ```flex``` using the following command;
 
-flex --verbose --header-file=SimpleScanner.h --outfile=${@} SimpleScanner.l
+```
+flex --verbose --header-file=SimpleScanner.h --outfile=SimpleScanner.c SimpleScanner.l
+```
 
   - Building the Scanner using C++ code.
 
