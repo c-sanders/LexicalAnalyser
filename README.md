@@ -243,17 +243,27 @@ resulting program out of the
 
 ### 5) Makefile targets
 
-This project can instruct ```flex``` to build a Scanner using either or both the C or C++ programming languages.
+This project can instruct ```flex``` to build a Scanner using either - or even both if desired, the C or C++ programming languages.
 
   - Building the Scanner using C code.
 
-To have the Scanner be implemented using the C programming language, use the following ```Makefile``` target;
+To have ```flex``` implement the Scanner in the C programming language, use the following ```Makefile``` target;
 
+```
+simpleScannerC
+```
 
 
   - Building the Scanner using C++ code.
-  
-It appears that getting ```flex``` to generate a Scanner in C++ is rather problematic, and doing so will result in the generated code containing the following comment; 
+
+To have ```flex``` implement the Scanner in the C++ programming language, use the following ```Makefile``` target;
+
+```
+simpleScannerCpp
+```
+
+It is worth noting 
+Instructing ```flex``` to generate a Scanner in C++ appears to be rather problematic. Evidence for this can be found in the source code file which ```flex``` generates in this situation, as it will contain the following comment; 
 
 ```
 /* The c++ scanner is a mess. The FlexLexer.h header file relies on the
