@@ -357,16 +357,30 @@ Parser
     
     while (nextToken is valid)
     {
-        // Process accordingly.
+        // Process token accordingly.
 
         // Ask the Scanner for the next token from the stream.
 
         nextToken = yylex();
     }
     
-    exit Parser
+    // Return from the Parser with an appropriate return  code.
+    
+    return(0);
 }
 ```
+
+Following is an example of syntactically and grammatically correct English language sentence.
+
+```
+Hello, how are you today?
+```
+
+Mixing this sentence up gives a syntactically correct but grammatically incorrect English language sentence.
+
+```
+Are you hello, today now?
+``
 
 
 Good luck!
