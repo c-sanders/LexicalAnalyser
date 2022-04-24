@@ -349,11 +349,19 @@ Parser
 (
 )
 {
-    while Scnner has another Token available
+    // Ask the Scanner for the next token from the stream.
+    
+    nextToken = yylex();
+    
+    // As long as the next token is valid, process it.
+    
+    while (nextToken is valid)
     {
-        // Get next Token from the Scanner.
-        
         // Process accordingly.
+
+        // Ask the Scanner for the next token from the stream.
+
+        nextToken = yylex();
     }
     
     exit Parser
