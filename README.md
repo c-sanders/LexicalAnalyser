@@ -336,10 +336,29 @@ command line in order to make it run.
 
 The program is comprised of two main components;
 
-  - the Scanner (aka Tokeniser or Lexer)
+  - the Scanner (aka Tokeniser or Lexer), and
   - the Parser
 
-The Scanner is implemented as a C function called ```yyflex```. It operates on byte streams such as ```stdin```, ```cin```, or files. How it operates on these byte streams is by retrieving tokens from them and passing these tokens to any clients which use the ```yyflex``` function.
+The Scanner is implemented as a C function called ```yyflex```. It operates on byte streams such as ```stdin``` (or ```cin``` if written in C++) or files. How it operates on these byte streams, is by retrieving tokens from them and passing these tokens to any clients which use the ```yyflex``` function. In the case of this program, the Parser acts as a client of the Scanner. Every time the Parser needs a new token, it simply asks the Scanner for one.
+
+Pseudo code for the Parser;
+
+```
+    int
+    Parser
+    (
+    )
+    {
+        while Scnner has another Token available
+        {
+            // Get next Token from the Scanner.
+            
+            // Process accordingly.
+        }
+        
+        exit Parser
+    }
+```
 
 
 Good luck!
