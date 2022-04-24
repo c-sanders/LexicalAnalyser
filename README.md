@@ -332,4 +332,14 @@ This file should have its permission bits set such that it is able to be invoked
 command line in order to make it run.
 
 
+### 6) How the program works
+
+The program is comprised of two main components;
+
+  - the Scanner (aka Tokeniser or Lexer)
+  - the Parser
+
+The Scanner is implemented as a C function called ```yyflex```. It operates on byte streams such as ```stdin```, ```cin```, or files. How it operates on these byte streams is by retrieving tokens from them and passing these tokens to any clients which use the ```yyflex``` function.
+
+
 Good luck!
