@@ -370,17 +370,19 @@ Parser
 }
 ```
 
-Following is an example of a syntactically and grammatically correct English language sentence.
+Following is an example of a syntactically correct and grammatically correct English language sentence.
 
 ```
 Hello, how are you today?
 ```
 
-Mixing this sentence up, gives a syntactically correct but grammatically incorrect English language sentence.
+Jumbling this sentence up, gives a syntactically correct but grammatically incorrect English language sentence.
 
 ```
-Are you hello, today now?
+You hello now, today are?
 ```
+
+Although this second version of the English language sentence is syntactically correct, it is grammatically incorrect. The reason it is syntactically correct, is because all of the words which the sentence contains are valid English words. Similarly, all of the punctuation characters which the sentence contains are valid as well. It's just that the way the words are arranged makes no sense. What does the sentence mean from a semantic standpoint? Therefore, it is both grammatically and semantically invalid.
 
 
 Good luck!
