@@ -370,17 +370,17 @@ Parser
 }
 ```
 
-Following is an example of syntactically and grammatically correct English language sentence.
+Following is an example of a syntactically and grammatically correct English language sentence.
 
 ```
 Hello, how are you today?
 ```
 
-Mixing this sentence up gives a syntactically correct but grammatically incorrect English language sentence.
+Mixing this sentence up, gives a syntactically correct but grammatically incorrect English language sentence.
 
 ```
 Are you hello, today now?
-``
+```
 
 
 Good luck!
