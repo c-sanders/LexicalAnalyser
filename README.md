@@ -344,20 +344,20 @@ The Scanner is implemented as a C function called ```yyflex```. It operates on b
 Pseudo code for the Parser;
 
 ```
-    int
-    Parser
-    (
-    )
+int
+Parser
+(
+)
+{
+    while Scnner has another Token available
     {
-        while Scnner has another Token available
-        {
-            // Get next Token from the Scanner.
-            
-            // Process accordingly.
-        }
+        // Get next Token from the Scanner.
         
-        exit Parser
+        // Process accordingly.
     }
+    
+    exit Parser
+}
 ```
 
 
