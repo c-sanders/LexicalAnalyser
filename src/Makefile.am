@@ -104,10 +104,12 @@ simpleScannerCpp_CPPFLAGS = -DHAVE_CONFIG_H \
 
 simpleScannerCpp_LDFLAGS  = -lfl
 
+simpleScannerCpp_LEXFLAGS = --verbose --c++ --prefix=Monty --header-file=SimpleScanner.hpp
+
 
 SimpleScanner.cpp : SimpleScanner.l
 
-	${LEX} --verbose --c++ --prefix=Monty --header-file=SimpleScanner.hpp --outfile=${@} ${<}
+	${LEX} ${simpleScannerCpp_LEXFLAGS} --outfile=${@} ${<}
 
 
 # ================================================================================
