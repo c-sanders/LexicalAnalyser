@@ -376,13 +376,17 @@ As you can see from this code listing, the Parser just keeps asking the Scanner 
 
 ## 7) Syntax, grammar, and semantics.
 
-Following is an example of a syntactically correct and grammatically correct English language sentence.
+A sentence in the English language can be syntactically correct but grammatically incorrect. The same holds true for statements in computer programming languages.
+
+Consider the following English language sentence.
 
 ```
 Hello, how are you today?
 ```
 
-Jumbling this sentence up, gives a syntactically correct but grammatically incorrect English language sentence.
+This sentence is an example of both a syntactically correct and grammatically correct English language sentence.
+
+Jumbling this sentence up however, gives a syntactically correct but grammatically incorrect English language sentence.
 
 ```
 You hello now, today are?
