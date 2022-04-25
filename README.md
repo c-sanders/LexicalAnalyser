@@ -334,10 +334,11 @@ command line in order to make it run.
 
 ### 6) How the program works
 
-The program is comprised of two main components;
+The program can be thought of as being comprised of three components;
 
   - the Scanner (aka Tokeniser or Lexer), and
   - the Parser
+  - the Parser driver
 
 The Scanner is implemented as a C function called ```yyflex```. It operates on byte streams such as ```stdin``` (or ```cin``` if written in C++) or files. How it operates on these byte streams, is by retrieving tokens from them and then passing these tokens to any clients which use the ```yyflex``` function. In the case of this program, it is the Parser that acts as a client of the Scanner. Every time the Parser needs a new token, it simply asks the Scanner for one.
 
@@ -369,6 +370,9 @@ Parser
     return(0);
 }
 ```
+
+
+### 7) Syntax, grammar, and semantics
 
 Following is an example of a syntactically correct and grammatically correct English language sentence.
 
