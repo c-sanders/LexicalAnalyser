@@ -392,7 +392,23 @@ Jumbling this sentence up however, gives a syntactically correct but grammatical
 You hello now, today are?
 ```
 
-Although this second version of the English language sentence is syntactically correct, it is grammatically incorrect. The reason it is syntactically correct, is because all of the words which the sentence contains are valid English words. Similarly, all of the punctuation characters which the sentence contains are valid as well. It's just that the way the words are arranged makes no sense. What does the sentence mean from a semantic standpoint? Therefore, it is both grammatically and semantically invalid.
+Although this second version of the English language sentence is syntactically correct, it is grammatically incorrect. The reason it is syntactically correct, is because all of the words which comprise the sentence are valid English words. Similarly, all of the punctuation characters which are contained within the sentence are valid. The problem with the sentence is that the way the words are arranged makes no sense. What does the sentence mean from a semantic standpoint? Therefore, it is both grammatically and semantically invalid.
+
+Now consider the following C language statement;
+
+```
+value_new = value_old + 10;
+```
+
+This statement is an example of both a syntactically correct and grammatically correct C language statement.
+
+Again, jumbling this statement up, gives a syntactically correct but grammatically incorrect C language statement.
+
+```
+value_new + 10; value_old =
+```
+
+Although this second version of the C language statement is syntactically correct, it is grammatically incorrect. A C language Scanner should have no issue with any of the tokens which comprise this statement. A C language Parser on the other hand, would not like this statement at all.
 
 
 Good luck!
